@@ -10,5 +10,14 @@ optionImages.forEach((image, index) => {
     image.addEventListener("click", () => {
         image.classList.add("active");
 
+        //Loop through each image again
+        optionImages.forEach((image2, index2) => {
+            // console.log(index, index2);
+
+            //If the current index doesn't match the clicked index
+            //Remove the "active" class from the option images
+            index !== index2 && image2.classList.remove("active");
+
+        })
     })
 })
