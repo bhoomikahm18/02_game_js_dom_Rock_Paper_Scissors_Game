@@ -20,7 +20,16 @@ optionImages.forEach((image, index) => {
         });
             //Get the source of the clicked option image
             let imageSrc = e.target.querySelector("img").src;
+            //Set the user image to the clicked option image
             userResult.src = imageSrc;
             // console.log(imageSrc);
+
+            //Generate a random number between 0 and 2
+            let randomNumber = Math.floor(Math.random() * 3);
+            // console.log(randomNumber);
+
+            //Create an array of CPU image options
+            let cpuImages = ["images/rock.png","images/paper.png","images/scissors.png"] ;
+            cpuResult.src = cpuImages[randomNumber];
     });
 });
