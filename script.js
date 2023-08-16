@@ -7,7 +7,7 @@ optionImages = document.querySelectorAll(".option_image");
 
 // console.log(gameContainer, userResult, cpuResult, result, optionImages);
 optionImages.forEach((image, index) => {
-    image.addEventListener("click", () => {
+    image.addEventListener("click", (e) => {
         image.classList.add("active");
 
         //Loop through each image again
@@ -17,7 +17,10 @@ optionImages.forEach((image, index) => {
             //If the current index doesn't match the clicked index
             //Remove the "active" class from the option images
             index !== index2 && image2.classList.remove("active");
-
-        })
-    })
-})
+        });
+            //Get the source of the clicked option image
+            let imageSrc = e.target.querySelector("img").src;
+            userResult.src = imageSrc;
+            // console.log(imageSrc);
+    });
+});
