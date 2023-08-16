@@ -18,6 +18,8 @@ optionImages.forEach((image, index) => {
             //Remove the "active" class from the option images
             index !== index2 && image2.classList.remove("active");
         });
+
+
         //Get the source of the clicked option image
         let imageSrc = e.target.querySelector("img").src;
         //Set the user image to the clicked option image
@@ -40,19 +42,22 @@ optionImages.forEach((image, index) => {
         //Create an object with all possible outcomes
         let outComes = {
             RR: "Draw",
-            RP: "Cpu",
+            RP: "CPU",
             RS: "User",
             PP: "Draw",
-            PR: "Cpu",
-            PS: "User",
+            PR: "User",
+            PS: "CPU",
             SS: "Draw",
-            SR: "Cpu",
+            SR: "CPU",
             SP: "User"
         };
 
         //Look up the outcome value based on user and CPU options
         let outComeValue = outComes[userValue + cpuValue];
-        console.log(outComeValue);
+
+        //Display the result
+        result.textContent = userValue === cpuValue ? "Match Draw" : `${outComeValue} Won!`;
+        // console.log(outComeValue);
 
     });
 });
