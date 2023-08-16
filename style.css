@@ -27,6 +27,28 @@ body {
     column-gap: 7rem;
 }
 
+.container.start .user_result {
+    transform-origin: left;
+    animation: userShake 0.7s ease infinite;
+}
+
+@keyframes userShake {
+    50% {
+        transform: rotate(10deg);
+    }
+}
+
+.container.start .cpu_result {
+    transform-origin: right;
+    animation: cpuShake 0.7s ease infinite;
+}
+
+@keyframes cpuShake {
+    50% {
+        transform: rotate(-10deg);
+    }
+}
+
 .result_images img {
     width: 100px;
 }
@@ -57,6 +79,10 @@ body {
     justify-content: space-between;
 }
 
+.container.start .option_images {
+    pointer-events: none;
+}
+
 .option_image {
     display: flex;
     flex-direction: column;
@@ -70,6 +96,7 @@ body {
 .option_image:hover {
     opacity: 1;
 }
+
 .option_image.active {
     opacity: 1;
 }
